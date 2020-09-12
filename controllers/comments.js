@@ -29,7 +29,7 @@ exports.addCommentForMovie = async (req, res, next) => {
 };
 
 exports.getCommentsForMovie = (req, res) => {
-  Comments.find({ movie: req.params.id }).then((comments) => {
+  Comments.find({ movie: req.params.id }).sort({ createdAt: 'descending' }).then((comments) => {
     if (comments) {
       return successResponse__(res, comments, 200);
     }
