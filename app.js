@@ -67,8 +67,8 @@ app.use((req, res, next) => {
  */
 app.post('/api/v1/movie/:id/comment', commentController.addCommentForMovie);
 app.get('/api/v1/movie/:id/comments', commentController.getCommentsForMovie);
-app.get('/api/v1/movie/comments/:ip', commentController.getCommentsForMovieByIp);
-app.get('/api/v1/movie/comments/:date_created', commentController.getCommentsForMovieByDateCreated);
+app.get('/api/v1/movie/comments/ip', commentController.getCommentsForMovieByIp);
+app.get('/api/v1/movie/comments/date_created', commentController.getCommentsForMovieByDateCreated);
 
 app.get('/api/v1/movie/:id/characters', movieController.getMovieCharacters);
 app.get('/api/v1/movie/:id/', movieController.getMovie);

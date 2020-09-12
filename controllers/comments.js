@@ -33,21 +33,30 @@ exports.getCommentsForMovie = (req, res) => {
     if (comments) {
       return successResponse__(res, comments, 200);
     }
+  }).catch((err) => {
+    console.log(err);
+    return ErrorResponse(res, 'Failed to fetch comments');
   });
 };
 
 exports.getCommentsForMovieByIp = (req, res) => {
-  Comments.find({ ip: req.params.ip }).then((comments) => {
+  Comments.find({ ip: req.query.ip }).then((comments) => {
     if (comments) {
       return successResponse__(res, comments, 200);
     }
+  }).catch((err) => {
+    console.log(err);
+    return ErrorResponse(res, 'Failed to fetch comments');
   });
 };
 
 exports.getCommentsForMovieByDateCreated = (req, res) => {
-  Comments.find({ created_at: req.params.date_created }).then((comments) => {
+  Comments.find({ createdAt: req.query.date }).then((comments) => {
     if (comments) {
       return successResponse__(res, comments, 200);
     }
+  }).catch((err) => {
+    console.log(err);
+    return ErrorResponse(res, 'Failed to fetch comments');
   });
 };
