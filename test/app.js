@@ -4,7 +4,7 @@ const app = require('../app.js');
 describe('GET /', () => {
   it('should return 200 OK', (done) => {
     request(app)
-      .get('/')
+      .get('/api/v1/characters/')
       .expect(200, done);
   });
 });

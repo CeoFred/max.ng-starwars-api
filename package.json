@@ -13,7 +13,7 @@
     "test": "nyc mocha --timeout=10000 --exit",
     "lint": "eslint \"**/*.js\"",
     "dev": "nodemon app.js",
-    "deploy":"git push heroku master && git push"
+    "deploy": "git push heroku master && git push"
   },
   "dependencies": {
     "axios": "^0.19.2",

@@ -30,7 +30,11 @@ exports.getMovie = async (req, res) => {
       return ErrorResponse(res, 'Movie Not Found');
     }
     const commentsForMovie = await Comments.find({ movie });
-    return successResponse__(res, { opening_crawl: response.data.opening_crawl, comments: commentsForMovie && commentsForMovie.length }, 200);
+    return successResponse__(res,
+      {
+        opening_crawl: response.data.opening_crawl,
+        comments: commentsForMovie && commentsForMovie.length
+      }, 200);
   } catch (error) {
     console.log(error);
     return ErrorResponse(res, 'Failed to fetch Movie');
